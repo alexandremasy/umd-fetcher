@@ -9,6 +9,7 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://github.com/alexandremasy/umd-fetcher",
   "keywords": [
     "umd",
     "umd loader"

@@ -1,1 +1,2 @@
-export { default as UMDLoader } from './loader'
+import { default as UMDFetcher } from './loader'
+export default UMDFetcher

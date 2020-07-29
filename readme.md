@@ -1,20 +1,20 @@
-# UMD Loader
-> A basic UMD module loader.
+# UMD Fetcher
+> A basic UMD module fetcher.
 
 ## Why
 
 Because I can.
 
-Building a large application some part of the codebase will be irrelevant to the user at a certain moment. Therefor let's only load the part the user need at the right moment.
+While building a large application means some part of the codebase will be irrelevant to the user at a certain moment. Therefor let's only load the part the user need at the right moment. Lazy loading is the key to improve reactivity and happiness of our user.
 
 ## How
 
-1. Install the lib: `yarn add umd-loader`
+1. Install the lib: `yarn add umd-fetcher`
 2. Use it like so:
 ```
-import UMDLoader from 'umd-loader'
+import UMDFetcher from 'umd-fetcher'
 
-UMDLoader.fetch({url: 'your-umd-package.umd.min.js', name:'your-umd-package-name'})
+UMDFetcher.fetch({url: 'your-umd-package.umd.min.js', name:'your-umd-package-name'})
 .then((module) => {
   console.log('module', module);
 });

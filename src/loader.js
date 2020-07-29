@@ -1,9 +1,9 @@
 /**
- * UMD Module Loader
+ * UMD Module Fetcher
  * 
  * @constructor
  */
-export default class UMDLoader{
+export default class UMDFetcher{
 
   /**
    * Check whether or not the module already exists.
@@ -24,7 +24,7 @@ export default class UMDLoader{
    * @param {String} args.name - The name of the module.
    */
   static get({name, fn = 'default'}){
-    if (!UMDLoader.exists(name)){
+    if (!UMDFetcher.exists(name)){
       throw `The requested module with the name "${name}" does not exists.`
     }
     
@@ -41,8 +41,8 @@ export default class UMDLoader{
    * @static
    */
   static fetch({ url, name }) {
-    if (UMDLoader.exists({name})) {
-      return Promise.resolve( UMDLoader.get(name) )
+    if (UMDFetcher.exists({name})) {
+      return Promise.resolve( UMDFetcher.get(name) )
     }
 
     let ret = new Promise((resolve, reject) => {

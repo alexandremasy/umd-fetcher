@@ -14,9 +14,9 @@
     "umd loader"
   ],
   "license": "MIT",
-  "main": "dist/umd-loader.esm.min.js",
-  "module": "dist/umd-loader.esm.min.js",
-  "name": "umd-loader",
+  "main": "dist/umd-fetcher.esm.min.js",
+  "module": "dist/umd-fetcher.esm.min.js",
+  "name": "umd-fetcher",
   "nodemonConfig": {
     "ignore": [
       ".git",
@@ -32,5 +32,5 @@
     "start": "nodemon --exec \"yarn bundle\"",
     "prepublish": "yarn bundle"
   },
-  "version": "0.0.0"
+  "version": "0.0.1"
 }

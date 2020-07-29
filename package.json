@@ -16,7 +16,7 @@
   "license": "MIT",
   "main": "dist/umd-loader.esm.min.js",
   "module": "dist/umd-loader.esm.min.js",
-  "name": "@spices/ginger",
+  "name": "umd-loader",
   "nodemonConfig": {
     "ignore": [
       ".git",

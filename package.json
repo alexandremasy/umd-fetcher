@@ -1,0 +1,36 @@
+{
+  "author": "Alexandre Masy <hello@alexandremasy.com",
+  "description": "A minimalist UMD module loader.",
+  "devDependencies": {
+    "rollup": "^2.21.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-terser": "^6.1.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "umd",
+    "umd loader"
+  ],
+  "license": "MIT",
+  "main": "dist/umd-loader.esm.min.js",
+  "module": "dist/umd-loader.esm.min.js",
+  "name": "@spices/ginger",
+  "nodemonConfig": {
+    "ignore": [
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "ext": "js"
+  },
+  "scripts": {
+    "bundle": "rollup -c",
+    "start": "nodemon --exec \"yarn bundle\"",
+    "prepublish": "yarn bundle"
+  },
+  "version": "0.0.0"
+}

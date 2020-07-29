@@ -14,7 +14,7 @@ export default class UMDFetcher{
    * @static
    */
   static exists({ name }){
-    return !!window[name]
+    return window.hasOwnProperty(name)
   }
 
   /**
@@ -54,7 +54,12 @@ export default class UMDFetcher{
         script.removeEventListener('load', onLoad);
         script.removeEventListener('error', onError);
 
-        resolve();
+        let i = setInterval(() => {
+          if (UMDFetcher.exists({name})){
+            clearInterval(i);
+            resolve( UMDFetcher.get({name}) );
+          }
+        }, 1)
       };
 
       let onError = () => {

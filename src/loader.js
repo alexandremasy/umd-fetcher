@@ -14,7 +14,7 @@ export default class UMDFetcher{
    * @static
    */
   static exists({ name }){
-    return window.hasOwnProperty(name)
+    return window && window.hasOwnProperty(name)
   }
 
   /**
@@ -42,7 +42,7 @@ export default class UMDFetcher{
    */
   static fetch({ url, name }) {
     if (UMDFetcher.exists({name})) {
-      return Promise.resolve( UMDFetcher.get(name) )
+      return Promise.resolve( UMDFetcher.get({name}) )
     }
 
     let ret = new Promise((resolve, reject) => {

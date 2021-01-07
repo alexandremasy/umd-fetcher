@@ -45,7 +45,7 @@ export default class UMDFetcher{
       return Promise.resolve( UMDFetcher.get({name}) )
     }
 
-    let ret = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const script = document.createElement('script');
       script.async = true;
       script.type = 'module';
@@ -57,7 +57,7 @@ export default class UMDFetcher{
         let i = setInterval(() => {
           if (UMDFetcher.exists({name})){
             clearInterval(i);
-            resolve( UMDFetcher.get({name}) );
+            return resolve( UMDFetcher.get({name}) );
           }
         }, 1)
       };
@@ -66,15 +66,13 @@ export default class UMDFetcher{
         script.removeEventListener('load', onLoad);
         script.removeEventListener('error', onError);
 
-        reject(new Error(`Error loading ${url}`));
+        return reject(new Error(`Error loading ${url}`));
       };
 
       script.addEventListener('load', onLoad);
       script.addEventListener('error', onError);
       script.src = url;
       document.head.appendChild(script);
-    });
-
-    return ret;
+    })
   }
 }
